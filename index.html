@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Quize</title>
+</head>
+
+<body>
+    <div class="quiz">
+        <h1 class="page-heading">Welcome to my quiz app</h1>
+        <div class="container start-rule--container">
+            <button class="btn btn-start">Start Playing</button>
+            <div class="rules hidden">
+                <h3 class="content-heading rules-heading">This are some rules about the quiz</h3>
+                <ol class="list">
+                    <li class="list-item">you will have only 15 second per question</li>
+                    <li class="list-item">Once you select your answer it can't be undone</li>
+                    <li class="list-item">you can't select any options once time goes off</li>
+                    <li class="list-item">you can't exit from the quiz while you are playing</li>
+                    <li class="list-item">you will get points on the basis of your answer</li>
+                </ol>
+                <div class="btn-exit-continue--container">
+                    <button class="btn btn-exit">Exit Quiz</button>
+                    <button class="btn btn-continue">Continue</button>
+                </div>
+            </div>
+            <div class="rules question-answer--container hidden">
+                <div class="question-top">
+                    <h3 class="content-heading rules-heading">This are some rules about the quiz</h3>
+                    <div class="timer">
+                        <p class="timer-txt">Time left</p>
+                        <span class="timer-num">08</span>
+                    </div>
+                </div>
+                <h3 class="content-heading question">1. This are some rules about the quiz</h3>
+                <ul class="list option">
+                    <li class="list-item option-item correct-opt">Once you select your answer it can't be undone <span class="correct-opt--icon hidden"><<</span></li>
+                    <li class="list-item option-item">you can't select any options once time goes off</li>
+                    <li class="list-item option-item wrong-opt">you can't exit from the quiz while you are playing<span class="wrong-opt--icon hidden">X</span></li>
+                    <li class="list-item option-item">you will get points on the basis of your answer</li>
+                </ul>
+                <div class="btn-exit-continue--container">
+                    <span class="pagination">1 of 5</span>
+                    <button class="btn btn-next hidden">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>

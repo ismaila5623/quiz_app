@@ -1,0 +1,215 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(245, 236, 236);
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.container {}
+
+.quiz {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.page-heading {
+    color: rgb(43, 41, 41);
+    font-size: 2.5rem;
+}
+
+.start-rule--container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-heading {}
+
+.rules {
+    box-shadow: 0 0 2em black;
+    padding: 1.5em 1.5em;
+}
+
+.rules-heading {
+    color: green;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .8em;
+    padding: 1em;
+}
+
+.list-item {
+    width: 100%;
+    height: 40px;
+    padding: .3em;
+    color: rgb(43, 41, 41);
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 0 10px black;
+}
+
+.btn {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .5em 1em;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.btn-start {
+    font-size: 1.2rem;
+    padding: 1em 2em;
+    color: green;
+    outline: 1px solid green;
+}
+
+.btn-start:hover {
+    color: white;
+    background-color: green;
+    outline-color: white;
+}
+
+.btn-exit-continue--container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    margin: 1em 0;
+}
+
+.btn-exit {
+    color: blue;
+    outline: 1px solid blue;
+}
+
+.btn-exit:hover {
+    color: white;
+    background-color: blue;
+    outline-color: white;
+}
+
+.btn-continue {
+    background-color: blue;
+    color: white;
+}
+
+.btn-continue:hover {
+    background-color: white;
+    color: blue;
+    outline: 1px solid blue;
+}
+
+.btn-next {
+    outline: 1px solid green;
+}
+
+.btn-next:hover {
+    color: white;
+    background-color: green;
+    outline-color: white;
+}
+
+.question-answer--container {}
+
+.question-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+.question {
+    font-size: 2rem;
+}
+
+.option {
+    margin-top: 1em;
+    margin-left: 1.5em;
+}
+
+.option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.correct-opt {
+    background-color: lightgreen;
+    color: green;
+}
+
+.wrong-opt {
+    background-color: rgb(173, 140, 140);
+    color: red;
+}
+
+.correct-opt--icon {
+    color: green;
+}
+
+.wrong-opt--icon {
+    color: red;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5em;
+    padding: .5em 1em;
+    border-radius: 5px;
+    background-color: lightblue;
+}
+
+.timer-txt,
+.timer-num {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.timer-txt {}
+
+.timer-num {
+    padding: .3em;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(43, 41, 41);
+}
+
+.pagination {
+    width: 100%;
+    padding-left: 1em;
+    color: rgb(43, 41, 41);
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
