@@ -2,12 +2,19 @@ const btnStart = document.querySelector('.btn-start')
 const rules = document.querySelector('.rules')
 const rulesBtns = rules.querySelectorAll('button')
 const questionContainer = document.querySelector('.question-answer--container')
+const score = document.querySelector('.score')
+let timerNum = score.querySelector('.timer-num')
+let pagination = score.querySelector('.pagination')
+let heading = score.querySelector('.content-heading')
+let btnExit = score.querySelector('.btn-exit')
+let btnContinue = score.querySelector('.btn-continue')
 
 let currentQuestion = 1;
 const questionTimer = 10;
 const totalNumOfQuestion = question.length;
 let totalMark = 0;
 let questionAnswered = false;
+let numOfQuestionAnswered = 0;
 rulesBtns.forEach(ruleBtn => {
     ruleBtn.addEventListener('click', (e) => {
         if (e.target.classList.contains('btn-exit')) {
@@ -15,6 +22,7 @@ rulesBtns.forEach(ruleBtn => {
             showElement([btnStart])
         } else if (e.target.classList.contains('btn-continue')) {
             hideElement([rules])
+            reset()
             startTimer()
         }
     })
@@ -31,6 +39,26 @@ btnStart.addEventListener('click', (e) => {
     hideElement([btnStart])
     showElement([rules])
 })
+btnExit.addEventListener('click', (e) => {
+    hideElement([score])
+    showElement([btnStart])
+})
+btnContinue.addEventListener('click', (e) => {
+    restart()
+})
+
+function restart() {
+    hideElement([score])
+    reset()
+    startTimer()
+}
+
+function reset() {
+    currentQuestion = 1;
+    totalMark = 0;
+    questionAnswered = false;
+    numOfQuestionAnswered = 0;
+}
 
 function startTimer() {
     let count = 0;
@@ -51,7 +79,20 @@ function nextQuestion() {
         setQuestionAnswered(false);
         startTimer()
     } else {
-        console.log('this is the last question and this is your final score', totalMark)
+        hideElement([questionContainer])
+        showElement([score])
+        timerNum.innerHTML = getTotalMark();
+        pagination.innerHTML = `you have answered ${getNumOfQuestionAnswered()} out of ${totalNumOfQuestion} question`
+        if (getTotalMark() > (totalNumOfQuestion / 2)) {
+            heading.innerHTML = `Congratulations!!! you have made it. This is your final score`
+            heading.style.color = "green"
+        } else if (getTotalMark() == (totalNumOfQuestion / 2)) {
+            heading.innerHTML = `Tried but needs improvement. This is your final score`
+            heading.style.color = "yellow"
+        } else {
+            heading.innerHTML = `Mark very poor. This is your final score`
+            heading.style.color = "red"
+        }
     }
 }
 
@@ -94,6 +135,7 @@ function answered(el) {
     if (getQuestionAnswered()) {
         alert("question already answered please proceed to the next question")
     } else {
+        numOfQuestionAnswered++;
         setQuestionAnswered(true);
         if (isCorrect(el)) {
             addMark();
@@ -104,6 +146,14 @@ function answered(el) {
 
 function addMark() {
     totalMark++;
+}
+
+function getTotalMark() {
+    return totalMark;
+}
+
+function getNumOfQuestionAnswered() {
+    return numOfQuestionAnswered;
 }
 
 function isCorrect(el) {
